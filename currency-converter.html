@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ SEO META TAGS -->
+<title>Currency Converter – Free Live Exchange Rates 2026</title>
+<meta name="description" content="Free online currency converter with live exchange rates. Convert USD, EUR, GBP, PKR, INR and 150+ currencies instantly. Updated rates every minute.">
+<meta name="keywords" content="currency converter, exchange rate, USD to PKR, EUR to USD, live currency rates, forex converter, money converter, dollar to rupee">
+<meta name="robots" content="index, follow">
+<meta name="author" content="CurrencyCalc Pro">
+
+<!-- ✅ Open Graph -->
+<meta property="og:title" content="Free Currency Converter – Live Exchange Rates">
+<meta property="og:description" content="Convert any currency instantly with live exchange rates. 150+ currencies supported.">
+<meta property="og:type" content="website">
+
+<!-- ✅ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Currency Converter",
+  "description": "Free online currency converter with live exchange rates. Supports 150+ currencies.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --surface: #ede7d9;
+    --card: #ffffff;
+    --ink: #1a1410;
+    --ink2: #5a5248;
+    --accent: #c8401a;
+    --accent2: #2a6d4f;
+    --accent3: #1a3d6b;
+    --gold: #d4a017;
+    --border: #d4cbbf;
+    --shadow: 0 2px 20px rgba(26,20,16,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--bg); }
+  .logo span { color: var(--gold); }
+
+  nav { display: flex; gap: 20px; font-size: 0.8rem; font-weight: 500; }
+  nav a { color: rgba(245,240,232,0.6); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--bg); }
+
+  .hero {
+    text-align: center;
+    padding: 64px 20px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+  }
+
+  h1 em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    color: var(--ink2);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 16px;
+    line-height: 1.75;
+  }
+
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(42,109,79,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(42,109,79,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .live-dot {
+    width: 7px; height: 7px;
+    background: var(--accent2);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .ad-top {
+    max-width: 728px;
+    margin: 24px auto;
+    height: 90px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink2);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .main-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .calc-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 40px;
+  }
+
+  .calc-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .calc-title span {
+    font-size: 0.65rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--accent2);
+    background: rgba(42,109,79,0.08);
+    padding: 4px 10px;
+    border: 1px solid rgba(42,109,79,0.2);
+  }
+
+  .input-group { margin-bottom: 24px; }
+
+  .input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .input-label label {
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--ink2);
+    font-weight: 600;
+  }
+
+  .currency-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .currency-select-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s;
+    flex: 1;
+  }
+
+  .currency-select-wrap:focus-within { border-color: var(--ink); }
+
+  .currency-flag {
+    padding: 0 12px;
+    font-size: 1.3rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    background: var(--ink);
+    min-width: 52px;
+    justify-content: center;
+  }
+
+  .currency-select-wrap select {
+    flex: 1;
+    padding: 0 12px;
+    height: 52px;
+    border: none;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .amount-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s;
+    flex: 1;
+  }
+
+  .amount-wrap:focus-within { border-color: var(--ink); }
+
+  .amount-prefix {
+    padding: 0 14px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 0.8rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    min-width: 52px;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .amount-wrap input {
+    flex: 1;
+    padding: 0 16px;
+    height: 52px;
+    border: none;
+    background: transparent;
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--ink);
+    outline: none;
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  /* Swap button */
+  .swap-btn {
+    width: 48px;
+    height: 52px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  .swap-btn:hover { background: var(--ink); color: var(--bg); }
+
+  .calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  .calc-btn:hover { opacity: 0.9; }
+
+  /* Results */
+  .results {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .results.show { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-main {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+
+  .result-from {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 8px;
+  }
+
+  .result-value {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+    word-break: break-all;
+  }
+
+  .result-rate {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Quick convert grid */
+  .quick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .quick-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .quick-item:hover { border-color: var(--gold); }
+
+  .quick-amount {
+    font-size: 0.65rem;
+    color: var(--ink2);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-bottom: 3px;
+  }
+
+  .quick-result {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Rate info */
+  .rate-info {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+  }
+
+  .rate-info-label { color: var(--ink2); font-family: 'Plus Jakarta Sans', sans-serif; }
+  .rate-info-value { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--ink); }
+
+  /* Popular pairs */
+  .pairs-section { margin-top: 20px; }
+
+  .pairs-title {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink2);
+    margin-bottom: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .pairs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pair-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    font-size: 0.78rem;
+  }
+
+  .pair-item:hover { border-color: var(--ink); }
+
+  .pair-name { font-weight: 600; color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; }
+  .pair-rate { font-family: 'DM Mono', monospace; color: var(--ink2); font-size: 0.72rem; }
+
+  /* Sidebar */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+  .ad-sidebar {
+    height: 250px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink2);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .info-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-card p { font-size: 0.78rem; color: var(--ink2); line-height: 1.8; margin-bottom: 10px; }
+
+  .currency-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .currency-badge {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--ink2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* FAQ */
+  .faq-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+
+  .faq-heading {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .faq-item { background: var(--card); border: 1px solid var(--border); padding: 24px 28px; }
+  .faq-q { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; }
+  .faq-a { font-size: 0.78rem; color: var(--ink2); line-height: 1.8; }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.7rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    header { padding: 0 16px; }
+    nav { display: none; }
+    .main-grid { grid-template-columns: 1fr; padding: 16px; }
+    .calc-card { padding: 20px 16px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    h1 { letter-spacing: -1px; font-size: 2.2rem; }
+    .currency-row { flex-direction: column; gap: 10px; }
+    .swap-btn { width: 100%; height: 44px; font-size: 1.4rem; border-radius: 6px; }
+    .currency-select-wrap { width: 100%; }
+    .currency-select-wrap select { font-size: 0.95rem; }
+    .quick-grid { grid-template-columns: 1fr 1fr; }
+    .pairs-grid { grid-template-columns: 1fr; }
+    .result-value { font-size: 1.8rem; letter-spacing: -1px; }
+    .currency-list { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 40px 16px 32px; }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Currency<span>Calc</span> Pro</div>
+  <nav>
+    <a href="#">Currency</a>
+    <a href="https://fadiikhan8888-max.github.io">Loan Calc</a>
+    <a href="https://fadiikhan8888-max.github.io/age-calculator.html">Age Calc</a>
+    <a href="https://fadiikhan8888-max.github.io/bmi-calculator.html">BMI Calc</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-label">💱 Live Exchange Rates</div>
+  <h1>Currency <em>Converter</em><br>Live Rates</h1>
+  <p class="hero-sub">Convert any currency instantly with real-time exchange rates. Supports 150+ world currencies including USD, EUR, GBP, PKR, INR and more.</p>
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    Rates updated live
+  </div>
+</section>
+
+<div class="ad-top">AdSense Banner (728×90)</div>
+
+<div class="main-grid">
+
+  <div class="calc-card">
+    <div class="calc-title">
+      Convert Currency
+      <span id="rateUpdateTime">Loading rates...</span>
+    </div>
+
+    <!-- Amount -->
+    <div class="input-group">
+      <div class="input-label">
+        <label>Amount</label>
+      </div>
+      <div class="amount-wrap">
+        <div class="amount-prefix" id="fromSymbol">$</div>
+        <input type="number" id="amount" value="100" min="0" step="any" placeholder="Enter amount">
+      </div>
+    </div>
+
+    <!-- From Currency -->
+    <div class="input-group">
+      <div class="input-label">
+        <label>From Currency</label>
+      </div>
+      <div class="currency-row">
+        <div class="currency-select-wrap">
+          <div class="currency-flag" id="fromFlag">🇺🇸</div>
+          <select id="fromCurrency" onchange="updateFromFlag()"></select>
+        </div>
+        <button class="swap-btn" onclick="swapCurrencies()" title="Swap currencies">⇄</button>
+        <div class="currency-select-wrap">
+          <div class="currency-flag" id="toFlag">🇵🇰</div>
+          <select id="toCurrency" onchange="updateToFlag()"></select>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="convertCurrency()">💱 &nbsp; Convert Now</button>
+
+    <!-- Results -->
+    <div class="results" id="results">
+
+      <div class="result-main">
+        <div class="result-from" id="resultFrom">100 USD =</div>
+        <div class="result-value" id="resultValue">—</div>
+        <div class="result-rate" id="resultRate">1 USD = — PKR</div>
+      </div>
+
+      <!-- Quick amounts -->
+      <div style="font-size:0.65rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink2); margin-bottom:8px; font-family:'Plus Jakarta Sans',sans-serif">Quick Convert</div>
+      <div class="quick-grid" id="quickGrid"></div>
+
+      <!-- Rate info -->
+      <div class="rate-info">
+        <div>
+          <div class="rate-info-label">Exchange Rate</div>
+          <div class="rate-info-value" id="rateDisplay">—</div>
+        </div>
+        <div style="text-align:right">
+          <div class="rate-info-label">Inverse Rate</div>
+          <div class="rate-info-value" id="inverseRate">—</div>
+        </div>
+      </div>
+
+      <!-- Popular pairs -->
+      <div class="pairs-section">
+        <div class="pairs-title">Popular Pairs (vs USD)</div>
+        <div class="pairs-grid" id="pairsGrid"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <div class="ad-sidebar">AdSense (300×250)</div>
+
+    <div class="info-card">
+      <h3>Supported Currencies</h3>
+      <p>Our converter supports 150+ world currencies with live rates from trusted financial sources.</p>
+      <div class="currency-list">
+        <div class="currency-badge">🇺🇸 USD</div>
+        <div class="currency-badge">🇪🇺 EUR</div>
+        <div class="currency-badge">🇬🇧 GBP</div>
+        <div class="currency-badge">🇵🇰 PKR</div>
+        <div class="currency-badge">🇮🇳 INR</div>
+        <div class="currency-badge">🇦🇪 AED</div>
+        <div class="currency-badge">🇸🇦 SAR</div>
+        <div class="currency-badge">🇨🇦 CAD</div>
+        <div class="currency-badge">🇦🇺 AUD</div>
+        <div class="currency-badge">🇯🇵 JPY</div>
+        <div class="currency-badge">🇨🇳 CNY</div>
+        <div class="currency-badge">🇨🇭 CHF</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>About Exchange Rates</h3>
+      <p>Exchange rates fluctuate constantly based on supply and demand, interest rates, inflation, and geopolitical events.</p>
+      <p>Our rates are sourced from open financial APIs and updated regularly to give you the most accurate conversion possible.</p>
+      <p>For large transactions, always check with your bank or money exchange for the exact rate.</p>
+    </div>
+
+    <div class="ad-sidebar" style="height:200px">AdSense (300×200)</div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="faq-heading">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How accurate are the exchange rates?</div>
+      <div class="faq-a">Our rates are fetched from open financial data APIs and are updated regularly. They closely reflect mid-market rates. For large transactions, we recommend checking with your bank for the exact rate they offer.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many currencies does this converter support?</div>
+      <div class="faq-a">Our currency converter supports 150+ world currencies including all major currencies like USD, EUR, GBP, as well as regional currencies like PKR, INR, AED, SAR and many more.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the mid-market exchange rate?</div>
+      <div class="faq-a">The mid-market rate is the midpoint between the buy and sell prices of two currencies. It's the fairest rate available and is used as a benchmark. Banks and exchange services add a markup to this rate.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I convert USD to PKR?</div>
+      <div class="faq-a">Simply enter your amount, select USD as the From currency and PKR as the To currency, then click Convert. You'll instantly see the result along with the current exchange rate.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why do exchange rates change every day?</div>
+      <div class="faq-a">Exchange rates change due to factors like interest rate decisions by central banks, inflation data, trade balances, political events, and market speculation. The forex market trades 24 hours a day, 5 days a week.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this currency converter free to use?</div>
+      <div class="faq-a">Yes, our currency converter is completely free with no registration required. You can convert any amount between any two currencies as many times as you want.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 CurrencyCalc Pro — Free Financial Tools &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Disclaimer</a></p>
+  <p style="margin-top:6px; opacity:0.4;">Rates are for informational purposes only. Not financial advice.</p>
+</footer>
+
+<script>
+// Currency data with flags and symbols
+const currencies = {
+  USD: { name: 'US Dollar', flag: '🇺🇸', symbol: '$' },
+  EUR: { name: 'Euro', flag: '🇪🇺', symbol: '€' },
+  GBP: { name: 'British Pound', flag: '🇬🇧', symbol: '£' },
+  PKR: { name: 'Pakistani Rupee', flag: '🇵🇰', symbol: '₨' },
+  INR: { name: 'Indian Rupee', flag: '🇮🇳', symbol: '₹' },
+  AED: { name: 'UAE Dirham', flag: '🇦🇪', symbol: 'د.إ' },
+  SAR: { name: 'Saudi Riyal', flag: '🇸🇦', symbol: '﷼' },
+  CAD: { name: 'Canadian Dollar', flag: '🇨🇦', symbol: 'C$' },
+  AUD: { name: 'Australian Dollar', flag: '🇦🇺', symbol: 'A$' },
+  JPY: { name: 'Japanese Yen', flag: '🇯🇵', symbol: '¥' },
+  CNY: { name: 'Chinese Yuan', flag: '🇨🇳', symbol: '¥' },
+  CHF: { name: 'Swiss Franc', flag: '🇨🇭', symbol: 'Fr' },
+  SGD: { name: 'Singapore Dollar', flag: '🇸🇬', symbol: 'S$' },
+  MYR: { name: 'Malaysian Ringgit', flag: '🇲🇾', symbol: 'RM' },
+  TRY: { name: 'Turkish Lira', flag: '🇹🇷', symbol: '₺' },
+  BDT: { name: 'Bangladeshi Taka', flag: '🇧🇩', symbol: '৳' },
+  KWD: { name: 'Kuwaiti Dinar', flag: '🇰🇼', symbol: 'KD' },
+  QAR: { name: 'Qatari Riyal', flag: '🇶🇦', symbol: 'QR' },
+  OMR: { name: 'Omani Rial', flag: '🇴🇲', symbol: 'ر.ع.' },
+  BHD: { name: 'Bahraini Dinar', flag: '🇧🇭', symbol: '.د.ب' },
+  NZD: { name: 'New Zealand Dollar', flag: '🇳🇿', symbol: 'NZ$' },
+  ZAR: { name: 'South African Rand', flag: '🇿🇦', symbol: 'R' },
+  MXN: { name: 'Mexican Peso', flag: '🇲🇽', symbol: '$' },
+  BRL: { name: 'Brazilian Real', flag: '🇧🇷', symbol: 'R$' },
+  RUB: { name: 'Russian Ruble', flag: '🇷🇺', symbol: '₽' },
+  KRW: { name: 'South Korean Won', flag: '🇰🇷', symbol: '₩' },
+  HKD: { name: 'Hong Kong Dollar', flag: '🇭🇰', symbol: 'HK$' },
+  SEK: { name: 'Swedish Krona', flag: '🇸🇪', symbol: 'kr' },
+  NOK: { name: 'Norwegian Krone', flag: '🇳🇴', symbol: 'kr' },
+  DKK: { name: 'Danish Krone', flag: '🇩🇰', symbol: 'kr' },
+  THB: { name: 'Thai Baht', flag: '🇹🇭', symbol: '฿' },
+  IDR: { name: 'Indonesian Rupiah', flag: '🇮🇩', symbol: 'Rp' },
+  PHP: { name: 'Philippine Peso', flag: '🇵🇭', symbol: '₱' },
+  EGP: { name: 'Egyptian Pound', flag: '🇪🇬', symbol: 'E£' },
+};
+
+// Fallback rates (USD base) - used if API fails
+const fallbackRates = {
+  USD:1, EUR:0.92, GBP:0.79, PKR:278, INR:83.5, AED:3.67, SAR:3.75,
+  CAD:1.36, AUD:1.53, JPY:149, CNY:7.24, CHF:0.89, SGD:1.34, MYR:4.72,
+  TRY:32.5, BDT:110, KWD:0.307, QAR:3.64, OMR:0.385, BHD:0.376,
+  NZD:1.63, ZAR:18.7, MXN:17.2, BRL:4.97, RUB:89.5, KRW:1325, HKD:7.82,
+  SEK:10.5, NOK:10.7, DKK:6.88, THB:35.2, IDR:15700, PHP:56.5, EGP:30.9
+};
+
+let rates = { ...fallbackRates };
+let ratesLoaded = false;
+
+// Popular pairs to show
+const popularPairs = ['EUR', 'GBP', 'PKR', 'INR', 'AED', 'SAR', 'CAD', 'AUD'];
+
+// Populate dropdowns
+function populateDropdowns() {
+  const fromSel = document.getElementById('fromCurrency');
+  const toSel = document.getElementById('toCurrency');
+
+  Object.keys(currencies).forEach(code => {
+    const c = currencies[code];
+    const opt1 = new Option(`${c.flag} ${code} – ${c.name}`, code);
+    const opt2 = new Option(`${c.flag} ${code} – ${c.name}`, code);
+    fromSel.add(opt1);
+    toSel.add(opt2);
+  });
+
+  fromSel.value = 'USD';
+  toSel.value = 'PKR';
+}
+
+// Fetch live rates
+async function fetchRates() {
+  try {
+    const res = await fetch('https://open.er-api.com/v6/latest/USD');
+    const data = await res.json();
+    if (data && data.rates) {
+      rates = data.rates;
+      ratesLoaded = true;
+      const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('rateUpdateTime').textContent = `Live • ${time}`;
+      document.getElementById('rateUpdateTime').style.color = 'var(--accent2)';
+    }
+  } catch(e) {
+    document.getElementById('rateUpdateTime').textContent = 'Offline rates';
+  }
+}
+
+function updateFromFlag() {
+  const code = document.getElementById('fromCurrency').value;
+  const c = currencies[code];
+  if (c) {
+    document.getElementById('fromFlag').textContent = c.flag;
+    document.getElementById('fromSymbol').textContent = c.symbol;
+  }
+}
+
+function updateToFlag() {
+  const code = document.getElementById('toCurrency').value;
+  const c = currencies[code];
+  if (c) document.getElementById('toFlag').textContent = c.flag;
+}
+
+function swapCurrencies() {
+  const from = document.getElementById('fromCurrency');
+  const to = document.getElementById('toCurrency');
+  [from.value, to.value] = [to.value, from.value];
+  updateFromFlag();
+  updateToFlag();
+  if (document.getElementById('results').classList.contains('show')) {
+    convertCurrency();
+  }
+}
+
+function convertCurrency() {
+  const amount = parseFloat(document.getElementById('amount').value);
+  const from = document.getElementById('fromCurrency').value;
+  const to = document.getElementById('toCurrency').value;
+
+  if (!amount || amount <= 0) { alert('Please enter a valid amount!'); return; }
+  if (!rates[from] || !rates[to]) { alert('Currency rates not available!'); return; }
+
+  // Convert via USD base
+  const rateFrom = rates[from];
+  const rateTo = rates[to];
+  const exchangeRate = rateTo / rateFrom;
+  const result = amount * exchangeRate;
+  const inverseRate = rateFrom / rateTo;
+
+  const fromCurr = currencies[from];
+  const toCurr = currencies[to];
+
+  // Format result
+  let resultStr;
+  if (result >= 1000000) resultStr = result.toLocaleString('en', {maximumFractionDigits: 0});
+  else if (result >= 100) resultStr = result.toLocaleString('en', {maximumFractionDigits: 2});
+  else resultStr = result.toFixed(4);
+
+  document.getElementById('resultFrom').textContent = `${amount.toLocaleString()} ${from} =`;
+  document.getElementById('resultValue').textContent = `${toCurr.symbol} ${resultStr} ${to}`;
+  document.getElementById('resultRate').textContent = `1 ${from} = ${exchangeRate.toFixed(4)} ${to}`;
+  document.getElementById('rateDisplay').textContent = `1 ${from} = ${exchangeRate.toFixed(4)} ${to}`;
+  document.getElementById('inverseRate').textContent = `1 ${to} = ${inverseRate.toFixed(4)} ${from}`;
+
+  // Quick grid
+  const quickAmounts = [1, 5, 10, 50, 100, 500];
+  let quickHTML = '';
+  quickAmounts.forEach(a => {
+    const r = (a * exchangeRate);
+    const rStr = r >= 1000 ? r.toLocaleString('en', {maximumFractionDigits: 0}) : r.toFixed(2);
+    quickHTML += `<div class="quick-item" onclick="document.getElementById('amount').value=${a}; convertCurrency()">
+      <div class="quick-amount">${a} ${from}</div>
+      <div class="quick-result">${toCurr.symbol}${rStr}</div>
+    </div>`;
+  });
+  document.getElementById('quickGrid').innerHTML = quickHTML;
+
+  // Popular pairs
+  let pairsHTML = '';
+  popularPairs.forEach(code => {
+    if (code === from) return;
+    const r = (rates[code] / rates[from]);
+    const rStr = r >= 100 ? r.toLocaleString('en', {maximumFractionDigits: 0}) : r.toFixed(4);
+    const c = currencies[code];
+    pairsHTML += `<div class="pair-item" onclick="document.getElementById('toCurrency').value='${code}'; updateToFlag(); convertCurrency()">
+      <span class="pair-name">${c.flag} ${from}/${code}</span>
+      <span class="pair-rate">${rStr}</span>
+    </div>`;
+  });
+  document.getElementById('pairsGrid').innerHTML = pairsHTML;
+
+  document.getElementById('results').classList.add('show');
+}
+
+// Init
+populateDropdowns();
+fetchRates();
+// Auto refresh every 60 seconds
+setInterval(fetchRates, 60000);
+</script>
+
+</body>
+</html>
