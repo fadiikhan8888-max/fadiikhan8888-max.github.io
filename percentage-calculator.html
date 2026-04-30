@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ SEO META TAGS -->
+<title>Percentage Calculator – Free Online % Calculator 2026</title>
+<meta name="description" content="Free online percentage calculator. Calculate percentage of a number, percentage change, percentage increase/decrease, and more. Fast and accurate results.">
+<meta name="keywords" content="percentage calculator, percent calculator, calculate percentage, percentage change, percentage increase, percentage decrease, what is X percent of Y">
+<meta name="robots" content="index, follow">
+<meta name="author" content="PercentCalc Pro">
+
+<meta property="og:title" content="Free Percentage Calculator – Calculate % Instantly">
+<meta property="og:description" content="Calculate any percentage instantly. Percentage of a number, change, increase, decrease and more.">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Percentage Calculator",
+  "description": "Free online percentage calculator with multiple calculation modes.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --surface: #ede7d9;
+    --card: #ffffff;
+    --ink: #1a1410;
+    --ink2: #5a5248;
+    --accent: #c8401a;
+    --accent2: #2a6d4f;
+    --accent3: #1a3d6b;
+    --gold: #d4a017;
+    --purple: #7c3aed;
+    --border: #d4cbbf;
+    --shadow: 0 2px 20px rgba(26,20,16,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--bg); }
+  .logo span { color: var(--gold); }
+
+  nav { display: flex; gap: 20px; font-size: 0.8rem; font-weight: 500; }
+  nav a { color: rgba(245,240,232,0.6); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--bg); }
+
+  .hero {
+    text-align: center;
+    padding: 64px 20px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+  }
+
+  h1 em { font-style: italic; color: var(--purple); }
+
+  .hero-sub {
+    color: var(--ink2);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .ad-top {
+    max-width: 728px;
+    margin: 24px auto;
+    height: 90px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink2);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .main-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* Mode tabs */
+  .mode-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .mode-tab {
+    padding: 14px 12px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink2);
+    transition: all 0.2s;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .mode-tab .tab-icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
+
+  .mode-tab.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: white;
+  }
+
+  .mode-tab:hover:not(.active) { border-color: var(--purple); color: var(--purple); }
+
+  /* Calculator panels */
+  .calc-panel { display: none; }
+  .calc-panel.active { display: block; }
+
+  .panel-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-left: 4px solid var(--purple);
+    color: var(--ink);
+  }
+
+  .input-group { margin-bottom: 20px; }
+
+  .input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .input-label label {
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--ink2);
+    font-weight: 600;
+  }
+
+  .input-field-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s;
+  }
+
+  .input-field-wrap:focus-within { border-color: var(--ink); }
+
+  .input-prefix {
+    padding: 0 14px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 0.8rem;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    min-width: 48px;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .input-field-wrap input {
+    flex: 1;
+    padding: 0 16px;
+    height: 48px;
+    border: none;
+    background: transparent;
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--ink);
+    outline: none;
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  .formula-display {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: var(--ink2);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 4px;
+  }
+
+  .calc-btn:hover { opacity: 0.9; }
+
+  /* Result box */
+  .result-box {
+    margin-top: 20px;
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .result-box.show { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-inner {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .result-label {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .result-value {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .result-formula {
+    font-size: 0.72rem;
+    opacity: 0.4;
+    font-family: 'DM Mono', monospace;
+    margin-top: 6px;
+  }
+
+  /* Card layout */
+  .calc-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 32px;
+  }
+
+  .calc-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  /* Sidebar */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+  .ad-sidebar {
+    height: 250px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink2);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .info-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-card p { font-size: 0.78rem; color: var(--ink2); line-height: 1.8; margin-bottom: 10px; }
+
+  .tip-list { list-style: none; }
+  .tip-list li {
+    font-size: 0.75rem;
+    color: var(--ink2);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    line-height: 1.6;
+  }
+  .tip-list li::before { content: '%'; color: var(--purple); flex-shrink: 0; font-weight: 700; }
+  .tip-list li:last-child { border-bottom: none; }
+
+  /* FAQ */
+  .faq-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+  .faq-heading {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); padding: 24px 28px; }
+  .faq-q { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; }
+  .faq-a { font-size: 0.78rem; color: var(--ink2); line-height: 1.8; }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.7rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    header { padding: 0 16px; }
+    nav { display: none; }
+    .main-grid { grid-template-columns: 1fr; padding: 16px; }
+    .calc-card { padding: 20px 16px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    h1 { letter-spacing: -1px; font-size: 2.2rem; }
+    .hero { padding: 40px 16px 32px; }
+    .mode-tabs { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .result-value { font-size: 2rem; }
+    .result-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Percent<span>Calc</span> Pro</div>
+  <nav>
+    <a href="https://fadiikhan8888-max.github.io">Loan</a>
+    <a href="https://fadiikhan8888-max.github.io/age-calculator.html">Age</a>
+    <a href="https://fadiikhan8888-max.github.io/bmi-calculator.html">BMI</a>
+    <a href="https://fadiikhan8888-max.github.io/currency-converter.html">Currency</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-label">Free Math Tool</div>
+  <h1>Percentage <em>Calculator</em></h1>
+  <p class="hero-sub">Calculate any percentage instantly — percentage of a number, percentage change, increase, decrease, and more. 6 calculation modes!</p>
+</section>
+
+<div class="ad-top">AdSense Banner (728×90)</div>
+
+<div class="main-grid">
+
+  <div class="calc-card">
+    <div class="calc-card-title">Choose Calculation Type</div>
+
+    <!-- Mode tabs -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" onclick="setMode(0, this)">
+        <span class="tab-icon">🔢</span>X% of Y
+      </button>
+      <button class="mode-tab" onclick="setMode(1, this)">
+        <span class="tab-icon">❓</span>X is what % of Y
+      </button>
+      <button class="mode-tab" onclick="setMode(2, this)">
+        <span class="tab-icon">📈</span>% Change
+      </button>
+      <button class="mode-tab" onclick="setMode(3, this)">
+        <span class="tab-icon">➕</span>% Increase/Decrease
+      </button>
+    </div>
+
+    <!-- Panel 0: What is X% of Y -->
+    <div class="calc-panel active" id="panel0">
+      <div class="panel-title">What is X% of Y?</div>
+      <div class="formula-display" id="formula0">Enter values to see formula</div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Percentage (X)</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">%</div>
+          <input type="number" id="p0x" placeholder="e.g. 20" oninput="updateFormula(0)">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Of Number (Y)</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">#</div>
+          <input type="number" id="p0y" placeholder="e.g. 500" oninput="updateFormula(0)">
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate(0)">▶ &nbsp; Calculate</button>
+
+      <div class="result-box" id="result0">
+        <div class="result-inner">
+          <div>
+            <div class="result-label">Answer</div>
+            <div class="result-value" id="res0">—</div>
+            <div class="result-formula" id="resFormula0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 1: X is what % of Y -->
+    <div class="calc-panel" id="panel1">
+      <div class="panel-title">X is what % of Y?</div>
+      <div class="formula-display" id="formula1">Enter values to see formula</div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Value (X)</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">#</div>
+          <input type="number" id="p1x" placeholder="e.g. 50" oninput="updateFormula(1)">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Total (Y)</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">#</div>
+          <input type="number" id="p1y" placeholder="e.g. 200" oninput="updateFormula(1)">
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate(1)">▶ &nbsp; Calculate</button>
+
+      <div class="result-box" id="result1">
+        <div class="result-inner">
+          <div>
+            <div class="result-label">Answer</div>
+            <div class="result-value" id="res1">—</div>
+            <div class="result-formula" id="resFormula1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Percentage Change -->
+    <div class="calc-panel" id="panel2">
+      <div class="panel-title">Percentage Change (From → To)</div>
+      <div class="formula-display" id="formula2">Enter values to see formula</div>
+
+      <div class="input-group">
+        <div class="input-label"><label>From Value</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">Old</div>
+          <input type="number" id="p2x" placeholder="e.g. 100" oninput="updateFormula(2)">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label"><label>To Value</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">New</div>
+          <input type="number" id="p2y" placeholder="e.g. 150" oninput="updateFormula(2)">
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate(2)">▶ &nbsp; Calculate</button>
+
+      <div class="result-box" id="result2">
+        <div class="result-inner">
+          <div>
+            <div class="result-label">Percentage Change</div>
+            <div class="result-value" id="res2">—</div>
+            <div class="result-formula" id="resFormula2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: Increase/Decrease by % -->
+    <div class="calc-panel" id="panel3">
+      <div class="panel-title">Increase / Decrease a Number by %</div>
+      <div class="formula-display" id="formula3">Enter values to see formula</div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Original Number</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">#</div>
+          <input type="number" id="p3x" placeholder="e.g. 200" oninput="updateFormula(3)">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label"><label>Percentage</label></div>
+        <div class="input-field-wrap">
+          <div class="input-prefix">%</div>
+          <input type="number" id="p3y" placeholder="e.g. 15" oninput="updateFormula(3)">
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate(3)">▶ &nbsp; Calculate</button>
+
+      <div class="result-box" id="result3">
+        <div class="result-inner" id="result3inner">
+          <div>
+            <div class="result-label">After Increase</div>
+            <div class="result-value" id="res3inc">—</div>
+            <div class="result-formula" id="resFormula3inc"></div>
+          </div>
+          <div style="text-align:right">
+            <div class="result-label" style="text-align:right">After Decrease</div>
+            <div class="result-value" id="res3dec" style="color:rgba(245,240,232,0.5)">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <div class="ad-sidebar">AdSense (300×250)</div>
+
+    <div class="info-card">
+      <h3>Percentage Formulas</h3>
+      <p><strong>X% of Y:</strong><br>Result = (X ÷ 100) × Y</p>
+      <p><strong>X is what % of Y:</strong><br>Result = (X ÷ Y) × 100</p>
+      <p><strong>% Change:</strong><br>Result = ((New - Old) ÷ Old) × 100</p>
+      <p><strong>Increase by %:</strong><br>Result = X × (1 + Y/100)</p>
+      <p><strong>Decrease by %:</strong><br>Result = X × (1 - Y/100)</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Real Life Uses</h3>
+      <ul class="tip-list">
+        <li>Calculate discount on shopping — 20% off Rs 5000</li>
+        <li>Find tax amount — 17% GST on a bill</li>
+        <li>Check salary increase — from 50k to 65k</li>
+        <li>Calculate tip at restaurant</li>
+        <li>Find profit/loss percentage in business</li>
+        <li>Calculate exam score percentage</li>
+      </ul>
+    </div>
+
+    <div class="ad-sidebar" style="height:200px">AdSense (300×200)</div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="faq-heading">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How do I calculate 20% of 500?</div>
+      <div class="faq-a">Use the "X% of Y" mode. Enter 20 in the percentage field and 500 in the number field. The answer is 100. Formula: (20 ÷ 100) × 500 = 100.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I find what percentage one number is of another?</div>
+      <div class="faq-a">Use the "X is what % of Y" mode. For example, 50 is what % of 200? Enter 50 and 200 — the answer is 25%. Formula: (50 ÷ 200) × 100 = 25%.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How to calculate percentage increase?</div>
+      <div class="faq-a">Use the "% Change" mode. Enter the old value and new value. For example, from 100 to 150 is a 50% increase. Formula: ((150 - 100) ÷ 100) × 100 = 50%.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How to calculate a discount?</div>
+      <div class="faq-a">Use the "X% of Y" mode to find the discount amount, or use "% Increase/Decrease" to find the final price. For a 30% discount on Rs 1000: the discount is Rs 300, and the final price is Rs 700.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is percentage change formula?</div>
+      <div class="faq-a">Percentage Change = ((New Value - Old Value) ÷ Old Value) × 100. A positive result means increase, a negative result means decrease.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this percentage calculator free?</div>
+      <div class="faq-a">Yes, completely free with no registration needed. Use all 4 calculation modes as many times as you want — percentage of a number, percentage change, increase and decrease.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 PercentCalc Pro — Free Online Tools &nbsp;|&nbsp; <a href="#">Privacy Policy</a></p>
+</footer>
+
+<script>
+  let currentMode = 0;
+
+  function setMode(mode, btn) {
+    currentMode = mode;
+    document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel' + mode).classList.add('active');
+  }
+
+  function updateFormula(panel) {
+    const formulas = {
+      0: () => {
+        const x = document.getElementById('p0x').value;
+        const y = document.getElementById('p0y').value;
+        if (x && y) return `(${x} ÷ 100) × ${y} = ?`;
+        return 'Enter values to see formula';
+      },
+      1: () => {
+        const x = document.getElementById('p1x').value;
+        const y = document.getElementById('p1y').value;
+        if (x && y) return `(${x} ÷ ${y}) × 100 = ?`;
+        return 'Enter values to see formula';
+      },
+      2: () => {
+        const x = document.getElementById('p2x').value;
+        const y = document.getElementById('p2y').value;
+        if (x && y) return `((${y} - ${x}) ÷ ${x}) × 100 = ?`;
+        return 'Enter values to see formula';
+      },
+      3: () => {
+        const x = document.getElementById('p3x').value;
+        const y = document.getElementById('p3y').value;
+        if (x && y) return `Increase: ${x} × (1 + ${y}/100) | Decrease: ${x} × (1 - ${y}/100)`;
+        return 'Enter values to see formula';
+      }
+    };
+    document.getElementById('formula' + panel).textContent = formulas[panel]();
+  }
+
+  function calculate(panel) {
+    if (panel === 0) {
+      const x = parseFloat(document.getElementById('p0x').value);
+      const y = parseFloat(document.getElementById('p0y').value);
+      if (isNaN(x) || isNaN(y)) { alert('Please enter both values!'); return; }
+      const result = (x / 100) * y;
+      document.getElementById('res0').textContent = formatNum(result);
+      document.getElementById('resFormula0').textContent = `${x}% of ${y} = ${formatNum(result)}`;
+      document.getElementById('result0').classList.add('show');
+    }
+
+    else if (panel === 1) {
+      const x = parseFloat(document.getElementById('p1x').value);
+      const y = parseFloat(document.getElementById('p1y').value);
+      if (isNaN(x) || isNaN(y) || y === 0) { alert('Please enter valid values!'); return; }
+      const result = (x / y) * 100;
+      document.getElementById('res1').textContent = formatNum(result) + '%';
+      document.getElementById('resFormula1').textContent = `${x} is ${formatNum(result)}% of ${y}`;
+      document.getElementById('result1').classList.add('show');
+    }
+
+    else if (panel === 2) {
+      const x = parseFloat(document.getElementById('p2x').value);
+      const y = parseFloat(document.getElementById('p2y').value);
+      if (isNaN(x) || isNaN(y) || x === 0) { alert('Please enter valid values!'); return; }
+      const result = ((y - x) / x) * 100;
+      const sign = result >= 0 ? '+' : '';
+      document.getElementById('res2').textContent = sign + formatNum(result) + '%';
+      document.getElementById('res2').style.color = result >= 0 ? '#22c55e' : '#ef4444';
+      document.getElementById('resFormula2').textContent = result >= 0
+        ? `Increased by ${formatNum(Math.abs(result))}% from ${x} to ${y}`
+        : `Decreased by ${formatNum(Math.abs(result))}% from ${x} to ${y}`;
+      document.getElementById('result2').classList.add('show');
+    }
+
+    else if (panel === 3) {
+      const x = parseFloat(document.getElementById('p3x').value);
+      const y = parseFloat(document.getElementById('p3y').value);
+      if (isNaN(x) || isNaN(y)) { alert('Please enter both values!'); return; }
+      const inc = x * (1 + y / 100);
+      const dec = x * (1 - y / 100);
+      document.getElementById('res3inc').textContent = formatNum(inc);
+      document.getElementById('res3dec').textContent = formatNum(dec);
+      document.getElementById('resFormula3inc').textContent = `${x} + ${y}% = ${formatNum(inc)} | ${x} - ${y}% = ${formatNum(dec)}`;
+      document.getElementById('result3').classList.add('show');
+    }
+  }
+
+  function formatNum(n) {
+    if (n === Math.floor(n)) return n.toLocaleString();
+    return parseFloat(n.toFixed(2)).toLocaleString();
+  }
+</script>
+
+</body>
+</html>
